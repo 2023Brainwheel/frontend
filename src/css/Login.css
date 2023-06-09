@@ -1,0 +1,24 @@
+
+.ml{
+    margin-top: 20%;
+}
+Form {
+    font-family: "LINE_Rg";
+    margin: 0 auto;
+    width: 350px;
+}
+
+.btn-primary.one, .btn-primary.two{
+    border-radius: 10px;
+    font-family: "LINE_Bd";
+    width: 350px;
+    margin-top: 10px;
+}
+h1{
+    height: 80px;
+    font-weight: 800;
+    font-size: 50px;
+    margin-left: 30%;
+    color:#34ae34;
+    font-family: "LINE_Bd";
+}

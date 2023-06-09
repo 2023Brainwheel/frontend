@@ -1,0 +1,23 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.buttonContainer button {
+  
+  background-color:  #e6506e;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 125px; 
+}
+
+.buttonContainer button:first-child {
+  margin-right: 20px;
+}
+
+.buttonContainer button:last-child {
+  margin-left: 20px;
+}
