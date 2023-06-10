@@ -1,0 +1,13 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .loading-text {
+    font-size: larger;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  

@@ -18,6 +18,8 @@ function App() {
         <Route path="/Paper" element={<PaperPage/>}/>
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/Signup" element={<SignupPage/>}/>
+        <Route path="/Plastic" element={<PlasticPage/>}/>
+        <Route path="/Normal" element={<NormalPage/>}/>
       </Routes>
     </div>
   );

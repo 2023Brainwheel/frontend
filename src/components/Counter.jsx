@@ -6,9 +6,10 @@ import Bottom from '../img/bottom.png';
 import Right from '../img/right.png';
 import Left from '../img/left.png';
 import Dot from '../img/Dot2.png';
+import Loading from '../components/Loading';
 import '../css/Counter.css';
 
-const Counter = React.memo(({ max, texts, setCurrentText }) => {
+const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => {
   const [count, setCount] = useState(1);
 
   useEffect(() => {
@@ -28,11 +29,12 @@ const Counter = React.memo(({ max, texts, setCurrentText }) => {
       setCurrentText('눈을 세번 감았다 떴다 해주세요');
     } else if (count === 7) {
       setCurrentText('눈을 크게 떠 이마를 찡그려주세요');
+      setRenderButton(true); // 검증모드 버튼을 등장하도록 상태 변경
     } else {
       const textIndex = count - 1 > 5 ? (count - 1) % 5 : count - 1;
       setCurrentText(texts[textIndex]);
     }
-  }, [count, texts, setCurrentText]);
+  }, [count, texts, setCurrentText, setRenderButton]);
 
   const getImage = (count) => {
     switch (count) {
@@ -75,36 +77,47 @@ const App = () => {
 
   const [renderCounter, setRenderCounter] = useState(false);
   const [currentText, setCurrentText] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [renderButton, setRenderButton] = useState(false); // 검증모드 버튼을 보여줄지 여부
 
   useEffect(() => {
     setTimeout(() => {
       setRenderCounter(true);
-    }, 500);
+      setIsLoading(false);
+    }, 1200);
   }, []);
 
   return (
     <div className="app">
-      {/* <Topbar text="학습모드" /> */}
-      {renderCounter && (
-        <div className="counter-container">
-          <Counter max={7} texts={texts} setCurrentText={setCurrentText} />
-          <div className="text-container">
-            <div className="center-text">
-              {currentText !== 'Step2' && currentText !== 'Step3' && (
-                <span className="counter-text-large">{currentText}</span>
-              )}
+      {isLoading ? (
+        <div className="loading-container">
+          <div className="loading-text"><Loading/>학습준비중....</div>
+          <div className="loading-dot" />
+        </div>
+      ) : (
+        renderCounter && (
+          <div className="counter-container">
+            <Counter max={7} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
+            <div className="text-container">
+              <div className="center-text">
+                {currentText !== 'step2' && currentText !== 'step3' && (
+                  <span className="counter-text-large">{currentText}</span>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        )
       )}
       <div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '180px' }}>
-          <Link to="/Mypage">
-            <button type="submit" className="button">
-              검증모드
-            </button>
-          </Link>
-        </div>
+        {!isLoading && renderButton && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '180px' }}>
+            <Link to="/Plastic">
+              <button type="submit" className="button">
+                검증모드
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

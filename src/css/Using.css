@@ -1,0 +1,23 @@
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .BrainImg {
+    animation: blink 2s infinite;
+    margin-left: 28px;
+    margin-top: 0px;
+  }
+  
+  .BrainText {
+    margin-left: 125px; /* 원하는 위치로 수정 */
+    margin-top: 40px; /* 원하는 위치로 수정 */
+  }
+  

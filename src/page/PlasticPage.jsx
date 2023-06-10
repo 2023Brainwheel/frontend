@@ -2,17 +2,13 @@ import React from 'react';
 import Topbar from '../components/Topbar';
 
 
-function PlasticPage() {
-
-  const handleRefresh = () => {
-    window.location.reload();
-  };
+function Vf() {
 
   return (
     <div>
-      <Topbar handleRefresh={handleRefresh} text="플라스틱" />
+      <Topbar text="검증모드" />
     </div>
   );
 }
 
-export default PlasticPage;
+export default Vf;
