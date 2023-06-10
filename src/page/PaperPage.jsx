@@ -8,7 +8,7 @@ function PaperPage() {
 
   return (
     <div>
-      <Topbar handleRefresh={handleRefresh} text="종이" />
+      <Topbar handleRefresh={handleRefresh} text="사용모드" />
       </div>
   );
 }

@@ -1,0 +1,36 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.image-container {
+  margin-top: 200px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.counter-image {
+  margin-top: 70px;
+  width: 380px;
+}
+
+.counter-text {
+  margin-top: 50px;
+  font-size: 90px;
+}
+
+.counter-text-large {
+  font-size: 20.5px;
+  font-weight: 30000;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.center-text {
+  margin-top: 105px;
+  margin-left: 15.5%;
+  margin-right: 12.5%;
+}

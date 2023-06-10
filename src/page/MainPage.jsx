@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Mainpic from '../img/Trash1.png';
+import Mainpic from '../img/wheel.png';
 import '../css/MainPage.css';
 import '../css/Button.css'
 
@@ -11,23 +11,23 @@ function MainPage() {
           <Link to='/'>
             <div style={{
               position: 'absolute',
-              top: '30%',
+              top: '40%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
               color: 'black',
-              fontSize: '2.5rem',
+              fontSize: '2.1rem',
               fontWeight: 'bold',
               cursor: 'pointer'
             }}
-              className="project-animation">Recyclustering</div>
+              className="project-animation">Brain Wheel</div>
           </Link>
           <img
-            src={Mainpic} alt="사진" width="65%" height="280" style={{ marginTop: '300px' }} className="project-animation" />
+            src={Mainpic} width="45%" height="180" style={{ marginTop: '230px' }} className="project-animation" />
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '120px' }}>
           <Link to='/Login'>
-            <button className="button">시작하기</button>
+            <button type="submit" className="button">시작하기</button>
           </Link>
         </div>
 

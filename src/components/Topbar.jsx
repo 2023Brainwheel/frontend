@@ -34,7 +34,7 @@ function Topbar({ handleRefresh, text }) {
         {text}
       </Link>
       <Link to="/Mypage" className="link">
-        RC
+        BW
       </Link>
     </div>
   );
