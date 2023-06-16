@@ -111,7 +111,7 @@ const App = () => {
       <div>
         {!isLoading && renderButton && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '180px' }}>
-            <Link to="/Plastic">
+            <Link to="/Ver">
               <button type="submit" className="button">
                 검증모드
               </button>

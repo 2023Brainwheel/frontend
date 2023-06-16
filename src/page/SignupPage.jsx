@@ -8,14 +8,14 @@ import axios from 'axios';
 
 
 function Signup(){
-  const [email, setEmail] = useState("")
+  const [id, setId] = useState("")
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
   const register = () => {
     axios.post('http://127.0.0.1:8000/api/v1/user/new/',
     {
-      email: email,
+      id: id,
       password: password,
     })
     .then(()=> {
@@ -37,8 +37,8 @@ return(
     <h1>SIGNUP</h1>
 
       <Form.Group className="mb-3" controlId="formBasicEmail" >
-        <Form.Label>이메일</Form.Label>
-        <Form.Control type="email" placeholder="이메일" onChange={(e)=>{setEmail(e.target.value);}}/> 
+        <Form.Label>ID</Form.Label>
+        <Form.Control type="id" placeholder="ID" onChange={(e)=>{setId(e.target.value);}}/> 
         <Form.Text className="text-muted" ></Form.Text>
       </Form.Group>
       

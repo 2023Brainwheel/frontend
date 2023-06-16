@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import MainPage from './page/MainPage';
 import MyPage from './page/MyPage';
-import PlasticPage from './page/PlasticPage';
+import VerPage from './page/VerPage';
 import LearningPage from './page/LearningPage';
 import PaperPage from './page/PaperPage';
 import NormalPage from './page/NormalPage';
@@ -18,7 +18,7 @@ function App() {
         <Route path="/Paper" element={<PaperPage/>}/>
         <Route path="/Login" element={<LoginPage/>}/>
         <Route path="/Signup" element={<SignupPage/>}/>
-        <Route path="/Plastic" element={<PlasticPage/>}/>
+        <Route path="/Ver" element={<VerPage/>}/>
         <Route path="/Normal" element={<NormalPage/>}/>
       </Routes>
     </div>

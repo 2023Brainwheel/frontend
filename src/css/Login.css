@@ -3,14 +3,12 @@
     margin-top: 20%;
 }
 Form {
-    font-family: "LINE_Rg";
     margin: 0 auto;
     width: 350px;
 }
 
 .btn-primary.one, .btn-primary.two{
     border-radius: 10px;
-    font-family: "LINE_Bd";
     width: 350px;
     margin-top: 10px;
 }
