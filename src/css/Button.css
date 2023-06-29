@@ -1,9 +1,12 @@
 .button {
     margin-top: 10px;
-    background-color: #1f211f9c;
+    background-color: #3185cf;;
     color: white;
     font-size: 1rem;
     padding: 0.2rem 0.8rem;
     border-radius: 8px;
   }
+.LB {
+  margin-left: 40%;
+}
   

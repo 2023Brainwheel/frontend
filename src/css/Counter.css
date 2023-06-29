@@ -1,3 +1,4 @@
+/* Counter.css */
 .counter {
   display: flex;
   flex-direction: column;
@@ -15,22 +16,66 @@
 .counter-image {
   margin-top: 70px;
   width: 380px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .counter-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 50px;
   font-size: 90px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .counter-text-large {
-  font-size: 20.5px;
-  font-weight: 30000;
-  margin-left: 5px;
-  text-align: center;
+  
+  margin-top: 120px;
+  color: rgb(0, 0, 0);
+  font-size: 21px; /* 변경된 텍스트 크기 */
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: normal; /* 줄바꿈을 위해 변경 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center; /* 텍스트를 가운데로 정렬 */
+
 }
 
 .center-text {
-  margin-top: 105px;
-  margin-left: 15.5%;
-  margin-right: 12.5%;
+  margin-top: 120px;
+  margin-left: 35%;
+  margin-right: 30%;
+}
+
+.step3-text {
+  font-size: 90px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out, step3-animation 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes step3-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

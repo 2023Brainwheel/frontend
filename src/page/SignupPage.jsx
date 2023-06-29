@@ -8,15 +8,19 @@ import axios from 'axios';
 
 
 function Signup(){
+  const [name, setName] = useState("")
   const [id, setId] = useState("")
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("")
+  const [password2, setPassword2] = useState("");
 
   const navigate = useNavigate();
   const register = () => {
-    axios.post('http://127.0.0.1:8000/api/v1/user/new/',
+    axios.post('http://www.codinghhs.tech:5000/api/user/register',
     {
-      id: id,
+      username: name,
+      user_id: id,
       password: password,
+      password2: password2,
     })
     .then(()=> {
       console.log("회원가입 성공!");
@@ -36,7 +40,13 @@ return(
     <Form>
     <h1>SIGNUP</h1>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail" >
+    <Form.Group className="mb-3" controlId="formBasicName" >
+        <Form.Label>이름</Form.Label>
+        <Form.Control type="name" placeholder="Name" onChange={(e)=>{setName(e.target.value);}}/> 
+        <Form.Text className="text-muted" ></Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicId" >
         <Form.Label>ID</Form.Label>
         <Form.Control type="id" placeholder="ID" onChange={(e)=>{setId(e.target.value);}}/> 
         <Form.Text className="text-muted" ></Form.Text>
@@ -45,6 +55,12 @@ return(
       <Form.Group className="mb-4" controlId="formBasicPassword">
         <Form.Label>비밀번호</Form.Label>
         <Form.Control type="password" placeholder="비밀번호" onChange={(e)=>{setPassword(e.target.value);}}/>
+        <Form.Text className="text-muted"></Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-4" controlId="formBasicPassword">
+        <Form.Label>비밀번호 확인</Form.Label>
+        <Form.Control type="password" placeholder="비밀번호 확인" onChange={(e)=>{setPassword2(e.target.value);}}/>
         <Form.Text className="text-muted"></Form.Text>
       </Form.Group>
 

@@ -1,0 +1,7 @@
+.profileImg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 중앙 정렬을 위해 align-items 속성 추가 */
+  }
+
+  

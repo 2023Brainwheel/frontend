@@ -30,11 +30,11 @@ function Topbar({ handleRefresh, text }) {
           </div>
         </div>
       )}
-      <Link to="/Learning" className="link" onClick={handleRefresh}>
+      <div className =" link" onClick={handleRefresh}>
         {text}
-      </Link>
+      </div>
       <Link to="/Mypage" className="link">
-        BW
+        MY
       </Link>
     </div>
   );

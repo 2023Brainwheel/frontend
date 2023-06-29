@@ -10,14 +10,23 @@
     }
   }
   
+  @media (max-width: 300px) {
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
   .BrainImg {
     animation: blink 2s infinite;
-    margin-left: 28px;
-    margin-top: 0px;
+    margin:  auto; /* 이미지를 수평으로 가운데에 정렬 */
+    display: block; /* 이미지를 블록 레벨 요소로 설정 */
   }
   
   .BrainText {
-    margin-left: 125px; /* 원하는 위치로 수정 */
-    margin-top: 40px; /* 원하는 위치로 수정 */
+    margin: 40px auto; /* 글자를 수평으로 가운데에 정렬 */
+    font-size: larger;
+    text-align: center; /* 글자를 가운데로 정렬 */
   }
   

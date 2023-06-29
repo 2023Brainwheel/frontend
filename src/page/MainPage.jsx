@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Mainpic from '../img/wheel.png';
+import Mainpic from '../img/Wheel3.png';
 import '../css/MainPage.css';
 import '../css/Button.css'
 
@@ -22,7 +22,7 @@ function MainPage() {
               className="project-animation">Brain Wheel</div>
           </Link>
           <img
-            src={Mainpic} width="45%" height="180" style={{ marginTop: '230px' }} className="project-animation" />
+            src={Mainpic} width="60%" height="280" style={{ marginTop: '260px' }} className="project-animation" />
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '120px' }}>

@@ -4,7 +4,7 @@ import Topbar from '../components/Topbar';
 import Brain from '../img/Brain4.png';
 import '../css/Using.css'; // PaperPage 컴포넌트의 CSS 파일
 
-function PaperPage() {
+function UsingPage() {
   const handleRefresh = () => {
     window.location.reload();
   };
@@ -25,4 +25,4 @@ function PaperPage() {
   );
 }
 
-export default PaperPage;
+export default UsingPage;

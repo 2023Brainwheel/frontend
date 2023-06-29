@@ -1,0 +1,8 @@
+@media (max-width: 458px) {
+    .image-container {
+      align-items: center;
+      justify-content: space-between;
+      margin-left: 50%;
+    }
+}
+  

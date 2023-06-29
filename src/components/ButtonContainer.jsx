@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/ButtonContainer.css';
 import '../css/Button.css';
@@ -8,7 +8,7 @@ function ButtonContainer({ text,text2 }) {
     <div
       className="buttonContainer"
     >
-      <Link to="/can">
+      <Link to="/Learning">
         <button
           className="button"
         
@@ -16,7 +16,7 @@ function ButtonContainer({ text,text2 }) {
           {text}
         </button>
       </Link>
-      <Link to="/Paper">
+      <Link to="/Using">
         <button
           className="button"
           

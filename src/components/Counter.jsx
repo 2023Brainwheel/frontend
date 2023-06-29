@@ -1,3 +1,4 @@
+// App.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Eye from '../img/Eye.png';
@@ -23,12 +24,12 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   }, [max, count]);
 
   useEffect(() => {
-    if (count >= 2 && count <= 5) {
-      setCurrentText('');
+    if (count >= 1 && count <= 1) {
+      setCurrentText('5초간 화면을 바라봐주세요');
     } else if (count === 6) {
-      setCurrentText('눈을 세번 감았다 떴다 해주세요');
+      setCurrentText('눈을 세번 감았다 \n 떴다 해주세요');
     } else if (count === 7) {
-      setCurrentText('눈을 크게 떠 이마를 찡그려주세요');
+      setCurrentText('눈을 크게 떠 \n이마를 찡그려주세요');
       setRenderButton(true); // 검증모드 버튼을 등장하도록 상태 변경
     } else {
       const textIndex = count - 1 > 5 ? (count - 1) % 5 : count - 1;
@@ -59,7 +60,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
     <div className="counter">
       <div className="image-container">
         {count >= 1 && count <= 5 && <img className="counter-image" src={getImage(count)} alt="Direction" />}
-        {count === 6 ? <span className="counter-text">step2</span> : count === 7 ? <span className="counter-text">step3</span> : count < 1 || count > 5 ? <span className="counter-text">step{count}</span> : null}
+        {count === 6 ? <span className="counter-text">step2</span> : count === 7 ? <span className="counter-text step3-text">step3</span> : count < 1 || count > 5 ? <span className="counter-text">step{count}</span> : null}
       </div>
     </div>
   );
@@ -68,10 +69,10 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
 const App = () => {
   const texts = [
     '화면을 10초간 바라보신후, 점의 방향대로 바라봐주세요',
-    '위를 봐주세요.',
-    '아래를 봐주세요.',
-    '왼쪽을 봐주세요',
+    '먼저 위를 봐주세요',
+    '아래를 봐주세요',
     '오른쪽을 봐주세요',
+    '왼쪽을 봐주세요',
     '눈을 세번 깜빡여주세요',
   ];
 
@@ -84,14 +85,14 @@ const App = () => {
     setTimeout(() => {
       setRenderCounter(true);
       setIsLoading(false);
-    }, 1200);
+    }, 3000);
   }, []);
 
   return (
     <div className="app">
       {isLoading ? (
         <div className="loading-container">
-          <div className="loading-text"><Loading/>학습준비중....</div>
+          <div className="loading-text"><Loading />학습준비중....</div>
           <div className="loading-dot" />
         </div>
       ) : (

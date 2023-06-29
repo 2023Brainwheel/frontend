@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Button.css';
 
 const Button = ({ onClick, children }) => {
@@ -10,8 +11,10 @@ const Button = ({ onClick, children }) => {
   };
 
   return (
-    <button className="Button" onClick={handleClick}>
-      {'Add'}
+    <button className="button" onClick={handleClick}>
+      <Link to="/Mypage">
+      {'뒤로가기'}
+      </Link>
     </button>
   );
 };

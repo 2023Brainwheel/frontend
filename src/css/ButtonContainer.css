@@ -5,19 +5,38 @@
 }
 
 .buttonContainer button {
-  
-  background-color:  #1f211f9c;
+  background-color: #3185cf;;
   color: white;
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 8px;
-  width: 125px; 
+  width: 125px;
 }
 
 .buttonContainer button:first-child {
-  margin-right: 20px;
+  margin-right: 52px;
 }
 
 .buttonContainer button:last-child {
-  margin-left: 20px;
+  margin-left: 52px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 458px) {
+  .buttonContainer {
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .buttonContainer button:first-child {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .buttonContainer button:last-child {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }

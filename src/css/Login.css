@@ -11,12 +11,28 @@ Form {
     border-radius: 10px;
     width: 350px;
     margin-top: 10px;
+
+}
+
+@media (max-width: 360px) {
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.btn-primary.one, .btn-primary.two{
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 10%;
+}
 }
 h1{
     height: 80px;
     font-weight: 800;
     font-size: 50px;
     margin-left: 30%;
-    color:#34ae34;
+    color:#3185cf;
     font-family: "LINE_Bd";
 }

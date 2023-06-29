@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import LoginButton from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import '../css/Login.css';
 import axios from 'axios';
+import {setToken,getToken} from '../proto/Token.js';
+
 
 const Login = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+
   const navigate = useNavigate();
 
   const navigateToSignup = () => {
@@ -17,14 +20,21 @@ const Login = () => {
 
   const checkUser = () => {
     axios
-      .post('http://127.0.0.1:8000/api/v1/user/login/', {
-        id: id,
+      .post('http://www.codinghhs.tech:5000/api/user/login', {
+        username: id,
         password: password,
+      }, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
       })
       .then((response) => {
         console.log('로그인 성공!');
         alert('로그인을 환영합니다!');
-        console.log(response.data);
+        console.log(response.data["access_token"]);
+        const newToken = response.data["access_token"];
+        setToken(newToken);
+        console.log('newToken:',newToken); // 업데이트된 토큰 값 출력
         localStorage.clear();
         localStorage.setItem('user_id', response.data.user_id);
         localStorage.setItem('id', response.data.id);
