@@ -17,16 +17,19 @@
   margin-top: 70px;
   width: 380px;
   opacity: 0;
-  animation: fade-in 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out, fade-in 1s
+   ease-in-out;
   animation-fill-mode: forwards;
 }
 
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
+    transform: translateY(-20px);
   }
-  to {
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -45,7 +48,7 @@
   
   margin-top: 120px;
   color: rgb(0, 0, 0);
-  font-size: 21px; /* 변경된 텍스트 크기 */
+  font-size: 19px; /* 변경된 텍스트 크기 */
   font-weight: 700;
   margin-left: auto;
   margin-right: auto;

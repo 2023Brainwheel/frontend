@@ -69,7 +69,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
 const App = () => {
   const texts = [
     '화면을 10초간 바라보신후, 점의 방향대로 바라봐주세요',
-    '먼저 위를 봐주세요',
+    '위를 봐주세요',
     '아래를 봐주세요',
     '오른쪽을 봐주세요',
     '왼쪽을 봐주세요',
