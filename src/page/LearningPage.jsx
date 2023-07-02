@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Counter from '../components/Counter';
-import Button from '../components/Button';
+import Countdown from '../components/Countdown';
 import axios from 'axios';
 import { getToken } from '../proto/Token.js';
 

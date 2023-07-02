@@ -50,10 +50,10 @@
   color: rgb(0, 0, 0);
   font-size: 19px; /* 변경된 텍스트 크기 */
   font-weight: 700;
-  margin-left: auto;
+  margin-left: 10%;
   margin-right: auto;
   white-space: normal; /* 줄바꿈을 위해 변경 */
-  overflow: hidden;
+  
   text-overflow: ellipsis;
   text-align: center; /* 텍스트를 가운데로 정렬 */
 
@@ -72,6 +72,13 @@
   animation-fill-mode: forwards;
 }
 
+.step4-text {
+  font-size: 90px;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out, step4-animation 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 @keyframes step3-animation {
   0% {
     opacity: 0;
@@ -81,4 +88,22 @@
     opacity: 1;
     transform: translateY(0);
   }
+  
+
+
+  
+}
+@keyframes step4-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+
+  
 }

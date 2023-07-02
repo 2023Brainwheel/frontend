@@ -20,7 +20,8 @@
   
   .BrainImg {
     animation: blink 2s infinite;
-    margin:  auto; /* 이미지를 수평으로 가운데에 정렬 */
+    margin:  auto;
+    margin-top: 0px; /* 이미지를 수평으로 가운데에 정렬 */
     display: block; /* 이미지를 블록 레벨 요소로 설정 */
   }
   

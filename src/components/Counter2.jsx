@@ -99,7 +99,7 @@ const App = () => {
       {isLoading ? (
         <div className="loading-container">
           <div className="loading-text">
-            <Loading />학습준비중....
+            <Loading />검증준비중....
           </div>
           <div className="loading-dot" />
         </div>
@@ -123,9 +123,9 @@ const App = () => {
       <Countdown/>
         {!isLoading && renderButton && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
-            <Link to="/Ver">
+            <Link to="/Mypage">
               <button type="submit" className="button">
-                검증모드
+                완료
               </button>
             </Link>
           </div>

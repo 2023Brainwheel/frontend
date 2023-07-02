@@ -1,0 +1,15 @@
+.counterDown-container {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    color:rgb(204, 14, 14);
+  }
+  
+  .counterDown {
+    font-size: 60px;
+    font-weight: bold;
+  }
+  
+  
