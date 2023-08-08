@@ -27,8 +27,9 @@ function LearningPage() {
 
   return (
     <div>
-    <div>
       <Counter/>
+    <div>
+      
     </div>
     <div className ="LB">
       

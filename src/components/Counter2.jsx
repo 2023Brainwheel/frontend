@@ -5,9 +5,10 @@ import Up from '../img/up.png';
 import Bottom from '../img/bottom.png';
 import Right from '../img/right.png';
 import Left from '../img/left.png';
+import Done from '../img/Done.png';
 import Dot from '../img/Dot2.png';
 import Loading from '../components/Loading';
-import Countdown from '../components/Countdown'
+import Countdown from '../components/Countdown';
 import '../css/Counter.css';
 
 const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => {
@@ -24,17 +25,20 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   }, [max, count]);
 
   useEffect(() => {
-    if (count === 2) {
-      setCurrentText('위를 봐주세요');
-    } else if (count === 6) {
-      setCurrentText('이마를 올려주세요');
-    } else if (count === 7) {
-      setCurrentText('눈을 깜빡여주세요');
-    } else if (count === 8) {
-      setCurrentText('눈을 크게 떠 \n이마를 찡그려주세요');
-      setRenderButton(true); // Show verification mode button
-    } else {
-      const textIndex = count - 1 > 5 ? (count - 1) % 5 : count - 1;
+    if (count === 10) {
+      setCurrentText('아래를 봐주세요');
+  } else if (count === 11) {
+      setCurrentText('얼굴 찡그리기');
+  } else if (count === 12) {
+      setCurrentText('얼굴 찡그리기x2');
+  } else if (count === 13) {  
+    setCurrentText('이마 올리기');
+  } else if (count === 14) {
+    setCurrentText('이마 올리기x2');
+  } else if (count === 15) {
+    setCurrentText('검증끝');
+  } else {
+      const textIndex = count - 1 > 11 ? (count - 1) % 5 : count - 1;
       setCurrentText(texts[textIndex]);
     }
   }, [count, texts, setCurrentText, setRenderButton]);
@@ -42,44 +46,73 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   const getImage = (count) => {
     switch (count) {
       case 1:
-        return Dot;
       case 2:
-        return Up;
+        return Right;
       case 3:
-        return Bottom;
       case 4:
         return Left;
       case 5:
-        return Right;
       case 6:
+        return Dot;
+      case 7:
+      case 8:
+        return Up;
+      case 9:
+      case 10:
+        return Bottom;
+      case 11:
+      case 12:
         return Eye;
+      case 13:
+        case 14: 
+        return Dot;
+        case 15:
+          case 16: 
+          return Done; 
       default:
         return null;
     }
   };
 
+  useEffect(() => {
+    if (count === max) {
+      const timeout = setTimeout(() => {
+        setRenderButton(true);
+      }, 2000);
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [count, max]);
+
   return (
     <div className="counter">
       <div className="image-container">
-        {count >= 1 && count <= 5 && <img className="counter-image" src={getImage(count)} alt="Direction" />}
-        {count === 6 ? <span className="counter-text">step{count - 4}</span> : count === 7 ? (
-          <span className="counter-text step3-text">step{count - 4}</span>
-        ) : count === 8 ? (
-          <span className="counter-text step4-text">step{count - 4}</span>
-        ) : null}
+        {count >= 1 && count <= max && <img className="counter-image" src={getImage(count)} alt="Direction" />}
       </div>
     </div>
   );
 });
 
 const App = () => {
+  
   const texts = [
-    '화면을 5초간 바라보신후, 점의 방향대로 바라봐주세요',
-    '위를 봐주세요',
-    '아래를 봐주세요',
-    '오른쪽을 봐주세요',
     '왼쪽을 봐주세요',
-    '눈을 세번 깜빡여주세요',
+    '왼쪽을 봐주세요X2',
+    '오른쪽을 봐주세요',
+    '오른쪽을 봐주세요X2',
+    '크게 깜빡여 주세요',
+    '크게 깜빡여 주세요',
+    '위를 봐주세요',
+    '위를 봐주세요X2',
+    '아래를 봐주세요',
+    '아래를 봐주세요X2',
+    '이마를 올려주세요',
+    '이마를 올려주세요X2',
+    '깜빡',
+    '깜빡',
+    '검증끝',
   ];
 
   const [renderCounter, setRenderCounter] = useState(false);
@@ -91,7 +124,7 @@ const App = () => {
     setTimeout(() => {
       setRenderCounter(true);
       setIsLoading(false);
-    }, 3000);
+    }, 100);
   }, []);
 
   return (
@@ -105,9 +138,8 @@ const App = () => {
         </div>
       ) : (
         renderCounter && (
-          
           <div className="counter-container">
-            <Counter max={8} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
+            <Counter max={15} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
             <div className="text-container">
               <div className="center-text">
                 {currentText !== 'step2' && currentText !== 'step3' && (
@@ -115,17 +147,16 @@ const App = () => {
                 )}
               </div>
             </div>
-            
           </div>
         )
       )}
       <div>
-      <Countdown/>
+        <Countdown />
         {!isLoading && renderButton && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
-            <Link to="/Mypage">
+            <Link to="/Using">
               <button type="submit" className="button">
-                완료
+                사용모드
               </button>
             </Link>
           </div>

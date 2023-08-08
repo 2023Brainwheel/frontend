@@ -38,11 +38,26 @@
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  font-size: 90px;
+  margin-left: 50px;
+  font-size: 110px;
   opacity: 0;
   animation: fade-in 0.5s ease-in-out;
   animation-fill-mode: forwards;
 }
+
+.x-label {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 
 .counter-text-large {
   
@@ -50,10 +65,9 @@
   color: rgb(0, 0, 0);
   font-size: 19px; /* 변경된 텍스트 크기 */
   font-weight: 700;
-  margin-left: 10%;
-  margin-right: auto;
+  margin-left: 0rem;
+  margin-right: 0rem;
   white-space: normal; /* 줄바꿈을 위해 변경 */
-  
   text-overflow: ellipsis;
   text-align: center; /* 텍스트를 가운데로 정렬 */
 
