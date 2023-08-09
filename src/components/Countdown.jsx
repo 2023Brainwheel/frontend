@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../css/Countdown.css';
 
 const Counter = () => {
-  const [count, setCount] = useState(5);
+  const [count, setCount] = useState();
   const [isIncreasing, setIsIncreasing] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Counter = () => {
     // Start the countdown 0.5 seconds earlier
     const timeout = setTimeout(() => {
       setIsIncreasing(true);
-    }, 1910);
+    }, 1000);
 
     return () => {
       clearTimeout(timeout);

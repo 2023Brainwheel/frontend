@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Mainpic from '../img/Wheel3.png';
+import SpeechRecognition, {useSpeechRecognition} from 'react-speech-recognition';
 import '../css/MainPage.css';
 import '../css/Button.css'
 

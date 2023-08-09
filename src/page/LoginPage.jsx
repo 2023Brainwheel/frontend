@@ -20,7 +20,7 @@ const Login = () => {
 
   const checkUser = () => {
     axios
-      .post('http://www.codinghhs.tech:5000/api/user/login', {
+      .post('http://3.233.227.34:5000/api/user/login', {
         username: id,
         password: password,
       }, {

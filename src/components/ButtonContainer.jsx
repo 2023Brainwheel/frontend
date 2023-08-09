@@ -16,7 +16,7 @@ function ButtonContainer({ text,text2 }) {
           {text}
         </button>
       </Link>
-      <Link to="/Using">
+      <Link to="/Ver">
         <button
           className="button"
           

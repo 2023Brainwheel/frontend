@@ -8,7 +8,7 @@ function LearningPage() {
   useEffect(() => {
     const token = getToken();
     if (token) {
-      axios.get(`http://www.codinghhs.tech:5000/api/user/learn`, {
+      axios.get(`http://www.3.233.227.34:5000/api/user/learn`, {
         headers: {
           accept:"application/json",
           Authorization: `Bearer ${token}`,

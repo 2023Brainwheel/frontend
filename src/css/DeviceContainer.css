@@ -1,7 +1,7 @@
 .box {
   margin-left: 10px;
   margin-right: 10px;
-  background-color: rgb(200, 225, 243);
+  background-color: rgb(112, 119, 131);
   padding: 120px;
   margin-top: 0;
   border-radius: 8px;
@@ -23,4 +23,11 @@
   .profile {
     margin-top: 10%;
   }
+}
+
+.MypagePic {
+  width:5rem;
+  margin-left: -1.7rem;
+  margin-top: -1.8rem;
+  
 }

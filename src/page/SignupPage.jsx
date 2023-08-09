@@ -15,7 +15,7 @@ function Signup(){
 
   const navigate = useNavigate();
   const register = () => {
-    axios.post('http://www.codinghhs.tech:5000/api/user/register',
+    axios.post('http://www.3.233.227.34:5000/api/user/register',
     {
       username: name,
       user_id: id,

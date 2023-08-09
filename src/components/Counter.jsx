@@ -20,7 +20,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prevCount) => (prevCount < max ? prevCount + 1 : prevCount));
-    }, 500);
+    }, 50);
 
     return () => {
       clearInterval(interval);
@@ -30,6 +30,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   useEffect(() => {
     if (count === 22) {
       setCurrentText('눈을 찡그려 주세요');
+      setShowX3(false);
     } else if (count === 2) {  
       setShowX2(true);
     } else if (count === 3) {
@@ -56,22 +57,22 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
       setShowX2(false); // Reset X2
       setShowX3(true);
     } else if (count === 23) {  
-      setCurrentText('눈을 찡그려 주세요X2');
+      setCurrentText('눈을 찡그려 주세요');
       setShowX2(true);
       setShowX3(false);
     } else if (count === 24) {
-      setCurrentText('눈을 찡그려 주세요X3');
+      setCurrentText('눈을 찡그려 주세요');
       setShowX2(false); // Reset X2
       setShowX3(true);
     } else if (count === 25) {
-      setCurrentText('이마 올리기');
+      setCurrentText('이마를 올려주세요');
       setShowX2(false); // Reset X2
       setShowX3(false);
     } else if (count === 26){
-      setCurrentText('이마를 올리기x2');
+      setCurrentText('이마를 올려주세요');
       setShowX2(true);
     } else if (count === 27) {
-      setCurrentText('이마를 올리기x3');
+      setCurrentText('이마를 올려주세요');
       setShowX2(false); // Reset X2
       setShowX3(true);  
     } else if (count === 28) {
@@ -112,25 +113,25 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   const getImage = (count) => {
     switch (count) {
       case 1:
-        return Dot;
+        return Right;
       case 2:
         return Right;
       case 3:
         return Right;
       case 4:
-        return Right;
+        return Left;
       case 5:
         return Left;
       case 6:
         return Left;
       case 7:
-        return Left;
+        return Eye;
       case 8:
         return Eye;
       case 9:
         return Eye;
       case 10:
-        return Eye;
+        return Dot;
       case 11:
         return Dot;
       case 12:
@@ -138,21 +139,21 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
       case 13:
         return Dot;    
       case 14:
-        return Up;
+        return Dot;
       case 15:
-        return Up;
+        return Dot;
       case 16:
         return Up;
       case 17:
-        return Bottom;
+        return Up;
       case 18:
-        return Bottom;
+        return Up;
       case 19:
         return Bottom;
       case 20:
-        return Eye;
+        return Bottom;
       case 21:
-        return Eye;
+        return Bottom;
       case 22:
         return Eye;
       case 23:
@@ -166,7 +167,13 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
       case 27:
         return Eye;
       case 28:
-        return Done;  
+        return Done;
+      case 26:
+        return Eye;
+      case 27:
+        return Eye;
+      case 28:
+        return Done;   
       default:
         return null;
     }
@@ -205,14 +212,14 @@ const App = () => {
   const token = getToken();
   const texts = [
     '왼쪽을 봐주세요',
-    '왼쪽을 봐주세요X2',
-    '왼쪽을 봐주세요X3',
+    '왼쪽을 봐주세요',
+    '왼쪽을 봐주세요',
     '오른쪽을 봐주세요',
-    '오른쪽을 봐주세요X2',
-    '오른쪽을 봐주세요X3',
+    '오른쪽을 봐주세요',
+    '오른쪽을 봐주세요',
     '눈을 찡그려 주세요',
-    '눈을 찡그려 주세요X2',
-    '눈을 찡그려 주세요X3',
+    '눈을 찡그려 주세요',
+    '눈을 찡그려 주세요',
     '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
     '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
     '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
@@ -220,14 +227,17 @@ const App = () => {
     '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
     '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
     '위를 봐주세요',
-    '위를 봐주세요X2',
-    '위를 봐주세요X3',
+    '위를 봐주세요',
+    '위를 봐주세요',
     '아래를 봐주세요',
-    '아래를 봐주세요X2',
-    '아래를 봐주세요X3',
-    '눈을 찡그려 주세요',
-    '눈을 찡그려 주세요X2',
-    '눈을 찡그려 주세요X3',
+    '아래를 봐주세요',
+    '아래를 봐주세요',
+    '눈을 깜빡여 주세요',
+    '눈을 깜빡여 주세요',
+    '눈을 깜빡여 주세요',
+    '이마를 올려주세요',
+    '이마를 올려주세요',
+    '이마를 올려주세요',
     '훈련끝',
   ];
 
@@ -240,14 +250,14 @@ const App = () => {
     setTimeout(() => {
       setRenderCounter(true);
       setIsLoading(false);
-    }, 1000);
+    }, 2000);
   }, []);
 
   return (
     <div className="app">
       {renderCounter && (
         <div className="counter-container">
-          <Counter max={28} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
+          <Counter max={texts.length} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
           <div className="text-container">
             <div className="center-text">
               {currentText !== 'step2' && currentText !== 'step3' && (
@@ -264,7 +274,7 @@ const App = () => {
 
             <Link to="/Ver">
             <button type="submit" className="button" onClick={()=>{
-                axios.get(`http://3.233.227.34/api/user/h5`,{
+                axios.get(`http://3.233.227.34:5000/api/user/training`,{
                   headers: {
                     accept:"application/json",
                     Authorization: `Bearer ${token}`,
