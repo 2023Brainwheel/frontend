@@ -177,11 +177,11 @@ const App = () => {
     '검증 완료',
   ];
 
-  const [renderCounter, setRenderCounter] = useState(false);
+  const [renderCounter, setRenderCounter] = useState(true);
   const [currentText, setCurrentText] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [renderButton, setRenderButton] = useState(false); // Show verification mode button
-
+  
   useEffect(() => {
 
     const token = getToken();
@@ -194,21 +194,16 @@ const App = () => {
     }).then((response)=>{
       active_flag = response.data;
     } )
-
-    setTimeout(() => {
-      setRenderCounter(true);
-      setIsLoading(false);
-    }, 2000);
   }, []);
 
   return (
     <div className="app">
       {renderCounter && (
         <div className="counter-container">
-          <Counter max={15} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
+          <Counter max={texts.length} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
           <div className="text-container">
             <div className="center-text">
-              {currentText !== 'step2' && currentText !== 'step3' && (
+              {(
                 <span className="counter-text-large">{currentText}</span>
               )}
             </div>
@@ -228,8 +223,9 @@ const App = () => {
               </button>
             </Link>
           </div> 
-          ) : (active_flag === 0) ?
-          (
+          ) 
+          : (active_flag === 0) 
+          ?(
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '150px' }}>
             <Link to="/Mypage">
             <button type="submit" className="button" 

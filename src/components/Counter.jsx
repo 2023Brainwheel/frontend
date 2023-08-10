@@ -18,6 +18,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   const [showX3, setShowX3] = useState(false);
 
   useEffect(() => {
+    
     const interval = setInterval(() => {
       setCount((prevCount) => (prevCount < max ? prevCount + 1 : prevCount));
     }, 5000);
@@ -271,17 +272,10 @@ const App = () => {
     '훈련끝',
   ];
 
-  const [renderCounter, setRenderCounter] = useState(false);
+  const [renderCounter, setRenderCounter] = useState(true);
   const [currentText, setCurrentText] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [renderButton, setRenderButton] = useState(false); // Show verification mode button
-
-  useEffect(() => {
-    setTimeout(() => {
-      setRenderCounter(true);
-      setIsLoading(false);
-    }, 2000);
-  }, []);
 
   return (
     <div className="app">
@@ -290,7 +284,7 @@ const App = () => {
           <Counter max={texts.length} texts={texts} setCurrentText={setCurrentText} setRenderButton={setRenderButton} />
           <div className="text-container">
             <div className="center-text">
-              {currentText !== 'step2' && currentText !== 'step3' && (
+              {(
                 <span className="counter-text-large">{currentText}</span>
               )}
             </div>
