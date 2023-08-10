@@ -21,7 +21,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
     
     const interval = setInterval(() => {
       setCount((prevCount) => (prevCount < max ? prevCount + 1 : prevCount));
-    }, 500);
+    }, 5000);
 
     return () => {
       clearInterval(interval);

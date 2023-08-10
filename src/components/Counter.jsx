@@ -20,7 +20,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prevCount) => (prevCount < max ? prevCount + 1 : prevCount));
-    }, 50);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -29,7 +29,7 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
 
   useEffect(() => {
     if (count === 22) {
-      setCurrentText('눈을 찡그려 주세요');
+      setCurrentText('눈을 깜빡여 주세요');
       setShowX3(false);
     } else if (count === 2) {  
       setShowX2(true);
@@ -57,11 +57,11 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
       setShowX2(false); // Reset X2
       setShowX3(true);
     } else if (count === 23) {  
-      setCurrentText('눈을 찡그려 주세요');
+      setCurrentText('눈을 깜빡여 주세요');
       setShowX2(true);
       setShowX3(false);
     } else if (count === 24) {
-      setCurrentText('눈을 찡그려 주세요');
+      setCurrentText('눈을 깜빡여 주세요');
       setShowX2(false); // Reset X2
       setShowX3(true);
     } else if (count === 25) {
@@ -74,11 +74,29 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
     } else if (count === 27) {
       setCurrentText('이마를 올려주세요');
       setShowX2(false); // Reset X2
-      setShowX3(true);  
-    } else if (count === 28) {
-      setCurrentText('완료');
-      setShowX2(false); // Reset X2
-      setShowX3(false);    
+      setShowX3(true); 
+    } else if (count === 28) {  
+      setCurrentText('화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요');
+      setShowX3(false);
+    } else if (count === 29) {
+      setCurrentText('화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요');
+      
+    } else if (count === 30) {
+      setCurrentText('화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요');
+      
+    } else if (count === 31){
+      setCurrentText('화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요');
+  
+    } else if (count === 32) {
+      setCurrentText('화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요');
+     
+    } else if (count === 33) {
+      setCurrentText('화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요');
+        
+    } else if (count === 34) {
+      setCurrentText('학습 완료');
+         
+    
     } else {
       const textIndex = count - 1 > 20 ? (count - 1) % 5 : count - 1;
       setCurrentText(texts[textIndex]);
@@ -165,15 +183,21 @@ const Counter = React.memo(({ max, texts, setCurrentText, setRenderButton }) => 
       case 26:
         return Eye;
       case 27:
-        return Eye;
+        return Eye; // 이마
       case 28:
+        return Dot;
+      case 29:
+        return Dot;
+      case 30:
+        return Dot;
+      case 31:
+        return Dot;
+      case 32:
+        return Dot;
+      case 33:
+        return Dot;    
+      case 34:
         return Done;
-      case 26:
-        return Eye;
-      case 27:
-        return Eye;
-      case 28:
-        return Done;   
       default:
         return null;
     }
@@ -238,6 +262,12 @@ const App = () => {
     '이마를 올려주세요',
     '이마를 올려주세요',
     '이마를 올려주세요',
+    '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
+    '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
+    '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
+    '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
+    '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
+    '화면을 30초간 바라보신후, 점의 방향대로 바라봐주세요',
     '훈련끝',
   ];
 
